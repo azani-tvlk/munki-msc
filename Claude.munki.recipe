@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest Claude desktop PKG and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.munki-tvlk.munki.Claude</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>NAME</key>
+		<string>Claude AI</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>Update</string>
+			</array>
+			<key>description</key>
+			<string>Claude AI is an AI assistant made by Anthropic.</string>
+			<key>developer</key>
+			<string>Anthropic</string>
+			<key>display_name</key>
+			<string>Claude AI</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>installs</key>
+			<array>
+				<dict>
+					<key>CFBundleIdentifier</key>
+					<string>com.anthropic.claudefordesktop</string>
+					<key>CFBundleName</key>
+					<string>Claude</string>
+					<key>path</key>
+					<string>/Applications/Claude.app</string>
+					<key>type</key>
+					<string>application</string>
+					<key>version_comparison_key</key>
+					<string>CFBundleShortVersionString</string>
+				</dict>
+			</array>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>ParentRecipe</key>
+	<string>com.github.munki-tvlk.download.Claude</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
