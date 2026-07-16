@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest Claude desktop PKG and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.munki-tvlk.munki.Claude</string>
+	<string>com.github.azani-tvlk.munki-msc.munki.Claude</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
